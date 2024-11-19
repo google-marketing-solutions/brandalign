@@ -16,11 +16,11 @@ limitations under the License.
 
 # BrandAlign
 
-Supercharge Brand Compliance with Gemini
+Check compliance against guidelines with Gemini at scale
 
 ## Overview
 
-BrandAlign uses Gemini to check ads in bulk against human-readable policy description texts. Customers will be able to fetch Ads from Google Ads, provide their policy texts in raw format and generate a report highlighting policy issues.
+BrandAlign uses the power of Gemini to make sure that Google search ads are not violating brand policies and guidelines. It can verify headlines and descriptions in bulk and suggest an improved, rewritten ad copy that aligns with the specified rules, saving the customer time and keeping their brand message consistent. Additionally, image assets can be analysed to ensure they also match the brand's identity.
 
 ## Challenge Addressed
 
@@ -28,7 +28,7 @@ Large advertisers face a critical challenge: ensuring brand consistency across a
 
 ## Outcome & Impact
 
-With the power of Gemini BandAlign checks all guidelines against the clients text ads. For each validation a reasoning why an ad might not adhere to a guideline will be created. Additionally BrandAlign will provide a new improved ad which is valid to all guidelines.
+With the power of Gemini BrandAlign checks all guidelines against the clients text ads. For each validation a reasoning why an ad might not adhere to a guideline will be created. Additionally BrandAlign will provide a new improved ad which is valid to all guidelines. BrandAlign works across many languages due to Gemini’s multilinguality understanding in over 100 languages like Korean, French, German, Spanish, French, Japanese, Korean, Russian, and Chinese.
 
 ## Client Prerequisites
 
