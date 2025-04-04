@@ -89,9 +89,6 @@ const getTextAdFromResponsiveSearchAd = (item) => {
  * @returns {TextAd[]}
  */
 const fetchAds = (cid, campaigns, limit) => {
-  // campaign.status = 'ENABLED' AND
-  // ad_group.status = 'ENABLED' AND
-  // ad_group_ad.status = 'ENABLED' AND
 
   const campaignCondition =
     campaigns.length > 0 ? `AND campaign.id IN (${campaigns.join(',')})` : '';
