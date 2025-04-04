@@ -130,7 +130,6 @@ const validateImages = () => {
       const res = validateGuideline(promptParts);
       console.log(url, "-->", res);
 
-      // validationSheet.appendRow([adIds, adText, guidelineId, res.isValid, res.reasoning, res.suggestion || '']);
       validationSheet.appendRow([
         url,
         `=IMAGE("https://lh6.googleusercontent.com/d/${image.getId()}")`,
