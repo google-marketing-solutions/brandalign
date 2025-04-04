@@ -18,6 +18,14 @@ limitations under the License.
 
 Check compliance against guidelines with Gemini at scale
 
+## Get Started
+
+To get started with BrandAlign:
+
+1. Make a copy of the Google Sheets
+   [spreadsheet template]https://docs.google.com/spreadsheets/d/14omIL2VXX9P59RSsHraJ33FhOuR83rcIZoqXGJlOchM/copy)
+1. Follow the instructions detailed in the `Getting Started` sheet
+
 ## Overview
 
 BrandAlign uses the power of Gemini to make sure that Google search ads are not violating brand policies and guidelines. It can verify headlines and descriptions in bulk and suggest an improved, rewritten ad copy that aligns with the specified rules, saving the customer time and keeping their brand message consistent. Additionally, image assets can be analysed to ensure they also match the brand's identity.
