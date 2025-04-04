@@ -47,7 +47,10 @@ const runQuery = (query, customerId) => {
   const results = [];
   const request = { pageToken: undefined, customerId, query };
   const requestor = (req) =>
-    JSON.parse(InternalAdsApp.search(JSON.stringify(req), { version: 'v17' }));
+    fetchJson(
+      `https://googleads.googleapis.com/v17/customers/${customerId}/googleAds:search`,
+      addGoogleAdsAuth(req)
+    );
 
   do {
     const response = requestor(request);
@@ -89,7 +92,6 @@ const getTextAdFromResponsiveSearchAd = (item) => {
  * @returns {TextAd[]}
  */
 const fetchAds = (cid, campaigns, limit) => {
-
   const campaignCondition =
     campaigns.length > 0 ? `AND campaign.id IN (${campaigns.join(',')})` : '';
   const limitClause = limit ? `LIMIT ${limit}` : '';
