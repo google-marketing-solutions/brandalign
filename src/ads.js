@@ -26,7 +26,7 @@ const getCampaignIds = () =>
     .map((id) => id.trim())
     .filter((cell) => cell !== '');
 
-const ADS_ENPOINT = 'https://googleads.googleapis.com/v17/';
+const ADS_ENPOINT = 'https://googleads.googleapis.com/v23/';
 
 const addGoogleAdsAuth = (params) =>
   Object.assign(
@@ -48,7 +48,7 @@ const runQuery = (query, customerId) => {
   const request = { pageToken: undefined, customerId, query };
   const requestor = (req) =>
     fetchJson(
-      `https://googleads.googleapis.com/v17/customers/${customerId}/googleAds:search`,
+      `https://googleads.googleapis.com/v23/customers/${customerId}/googleAds:search`,
       addGoogleAdsAuth(req)
     );
 

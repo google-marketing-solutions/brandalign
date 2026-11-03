@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GEMINI_MODEL = 'gemini-3.8-flash';
 const GCP_PROJECT = getConfigVariable('GCP_ID');
 
 const addVertexAuth = (params) =>
@@ -49,7 +49,7 @@ const geminiRequestText = (model, text, responseSchema = undefined) =>
   geminiRequestParts(model, [{ text }], responseSchema);
 
 const geminiRequestParts = (model, userParts, responseSchema = undefined) => {
-  const serviceUrl = `https://us-central1-aiplatform.googleapis.com/v1/projects/${GCP_PROJECT}/locations/us-central1/publishers/google/models/${model}:generateContent`;
+  const serviceUrl = `https://aiplatform.googleapis.com/v1/projects/${GCP_PROJECT}/locations/global/publishers/google/models/${GEMINI_MODEL}:generateContent`;
   const responseSchemaSupported = model.startsWith('gemini-1.5-pro');
   const parts = responseSchemaSupported
     ? userParts
@@ -94,11 +94,15 @@ const geminiRequestParts = (model, userParts, responseSchema = undefined) => {
 
       // see https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#generationconfig
       generation_config: {
-        temperature: 1.0, // Range for gemini-1.5-pro: 0.0 - 2.0 (default: 1.0)
-        top_p: 0.95, // Default for gemini-1.5-pro: 0.95
+        temperature: 1.0, 
+        top_p: 0.95, 
         max_output_tokens: 8192,
         responseMimeType: 'application/json',
         response_schema: responseSchemaSupported ? responseSchema : undefined,
+        //Added thinking parameters
+        thinkingConfig: {
+          thinkingLevel: 'LOW' 
+        }
       },
     })
   );
